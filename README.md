@@ -29,7 +29,7 @@ Whenever a user begins their message with `=tex`, the rest of the message is int
 ```
 =tex $\int_{-\infty}^{\infty} e^{-x^2} \mathrm dx = \sqrt{\pi}$
 ```
-in any channel which the bot is a member of will cause the bot to respond with
+in any channel which the bot is a member of will cause the bot to respond with the image below.
 
 ![Rendered LaTeX image](docs/outfile.png?raw=true "PNG image rendered by bot")
 
