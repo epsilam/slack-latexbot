@@ -30,6 +30,7 @@ Whenever a user begins their message with `=tex`, the rest of the message is int
 =tex $\int_{-\infty}^{\infty} e^{-x^2} \mathrm dx = \sqrt{\pi}$
 ```
 in any channel which the bot is a member of will cause the bot to respond with
+
 ![Rendered LaTeX image](docs/outfile.png?raw=true "PNG image rendered by bot")
 
 The `=t` command is a shorthand command that interprets the message text as if it were all one equation. No delimiters are required when using `=t`. An example usage would be `=t 1\neq 2`. This command takes the user's message and wraps it between two $ signs and then interprets the resulting string in the same way the `=tex` command would.
