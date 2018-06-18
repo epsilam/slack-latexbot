@@ -32,32 +32,30 @@ class LatexPlugin(MachineBasePlugin):
                 print(error)
                 return "Error: invalid LaTeX."
 
-    @listen_to(r"^=tex ", re.IGNORECASE)
+    @listen_to(r"^=tex", re.IGNORECASE)
     def respond_tex(self, msg):
-        self.render_upload_latex(msg.text[5:], str(msg.channel.id))
+        self.render_upload_latex(msg.text[4:], str(msg.channel.id))
 
-    @listen_to(r"^=t ", re.IGNORECASE)
+    @listen_to(r"^=t", re.IGNORECASE)
     def respond_quicktex(self, msg):
-        self.render_upload_latex('$' + msg.text[3:] + '$', str(msg.channel.id))
+        self.render_upload_latex('$' + msg.text[2:] + '$', str(msg.channel.id))
+
+    def help_response(self, msg):
+        response = r"""
+It seems you have asked for help. I have several available commands. Putting a command at the beginning of your message will trigger an action. Here they are:
+>`=tex <message>`
+When this command is issued, I will compile whatever LaTeX code appears in <message>, and will upload a .png file of the result. Example: `=tex This is an equation: $1\neq 2$`.
+>`=t <message>``
+This command just takes a single equation as input without delimiters. It just takes whatever is passed through <message>, slaps two $ signs on both ends and then puts that through the same process as the =tex command. Example: `=t 1\neq 2`.
+>`=help`
+Entering this command will cause me to display this help message. Alternatively, you can @ me and include any uppercase/lowercase variation of the word "help" anywhere in your message.
+        """
+        msg.say(response)
 
     @respond_to(r"help", re.IGNORECASE)
-    def help_response(self, msg):
-        response = """
-It seems you have asked for help. I have several available commands. Putting a command at the beginning of your message will trigger an action. Here they are:
-> =tex <message>
-This command will compile whatever LaTeX code appears in <message>, and will upload a .png file of the result.
-> =t <message>
-Quick LaTeX: just takes a single equation as input without delimiters.
-        """
-        msg.reply(response)
+    def respond_help_at(self, msg):
+        self.help_response(msg)
 
-    #> =inline <message>
-    #This command will only render the parts of your message which come between the $ delimiters. One .png image will be rendered for each pair of delimiters.
-
-    #@listen_to(r"^=inline ", re.IGNORECASE)
-    #def respond_inline(self, msg):
-    #    if
-    #    tex_list = re.findall(r"\[;([\w\W]+);\]", msg.text[7:])
-    #    for item in tex_list:
-    #        message = "$" + item + "$"
-    #        self.render_upload_latex(msg.text, str(msg.channel.id))
+    @listen_to(r"^=help", re.IGNORECASE)
+    def respond_help_command(self, msg):
+        self.help_response(msg)

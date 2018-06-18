@@ -37,5 +37,4 @@ in any channel which the bot is a member of will cause the bot to respond with t
 
 The `=t` command is a shorthand command that interprets the message text as if it were all one equation. No delimiters are required when using `=t`. An example usage would be `=t 1\neq 2`. This command takes the user's message and wraps it between two $ signs and then interprets the resulting string in the same way the `=tex` command would.
 
-## To-do
-- Make an inline version of `render_latex()` that prints several images (one for each pair of math-mode delimiters). It should not return any text outside these delimiters. Triggered on detection of "=inline" or a similar command.
+A help message can be sent by the bot by using `=help` or by mentioning it (using @) and including the word "help" in any part of the message (any lowercase/uppercase variation will do).
