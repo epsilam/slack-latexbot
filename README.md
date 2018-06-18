@@ -14,7 +14,9 @@ The bot can be started by entering `slack-machine` into your shell.
 
 
 ## Alternative installation using Python virtual environments (highly recommended)
-After you `git clone` this repo, go into the root directory with `cd slack-latexbot` and then locally install the dependencies with
+After you clone this repository, go into the repository's root directory with `cd slack-latexbot` and set the virtual environment's python version to at least Python 3.6 (`slack-machine` requires Python 3 and won't play nice with Python 2) and install the dependencies using the following commands:
+
+`pipenv --python 3.6`
 
 `pipenv install slack-machine`
 
