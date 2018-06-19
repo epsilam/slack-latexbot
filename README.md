@@ -8,6 +8,8 @@ Install this project's dependencies with
 
 `pip install slackclient`
 
+Also, make sure you have the `pdflatex` and `convert` commands available. `pdflatex` typically comes with any standard LaTeX distribution, and `convert` comes pre-installed in most Linux distros.
+
 In `local-settings.py`, set the variable `SLACK_API_TOKEN` to the API token given to you by Slack in your bot's configuration.
 
 The bot can be started by entering `slack-machine` into your shell.
@@ -20,6 +22,8 @@ After you clone this repository, go into the repository's root directory with `c
 `pipenv install slack-machine`
 
 `pipenv install slackclient`
+
+Also, make sure you have the `pdflatex` and `convert` commands available. `pdflatex` typically comes with any standard LaTeX distribution, and `convert` comes pre-installed in most Linux distros.
 
 In `local-settings.py`, set the variable `SLACK_API_TOKEN` to the API token given to you by Slack in your bot's configuration.
 
