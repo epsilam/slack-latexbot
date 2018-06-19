@@ -9,6 +9,11 @@ import re
 class LatexPlugin(MachineBasePlugin):
 
     def render_upload_latex(self, msgtext, msgchannel):
+        #Slack converts the characters &, <, and > in user messages to special strings. Here, we convert them back.
+        msgtext = msgtext.replace(r'&amp;', r'&')
+        msgtext = msgtext.replace(r'&lt;', r'<')
+        msgtext = msgtext.replace(r'&gt;', r'>')
+        #Replace placeholder variable in LaTeX template with the message text
         template = self.settings['LATEX_TEMPLATE_FILE'].substitute(input_text=msgtext)
         with TemporaryDirectory() as dir:
             try:
