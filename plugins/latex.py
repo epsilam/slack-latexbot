@@ -32,13 +32,13 @@ class LatexPlugin(MachineBasePlugin):
                 print(error)
                 return "Error: invalid LaTeX."
 
-    @listen_to(r"^=tex", re.IGNORECASE)
+    @listen_to(r"^=tex ", re.IGNORECASE)
     def respond_tex(self, msg):
-        self.render_upload_latex(msg.text[4:], str(msg.channel.id))
+        self.render_upload_latex(msg.text[5:], str(msg.channel.id))
 
-    @listen_to(r"^=t", re.IGNORECASE)
+    @listen_to(r"^=t ", re.IGNORECASE)
     def respond_quicktex(self, msg):
-        self.render_upload_latex('$' + msg.text[2:] + '$', str(msg.channel.id))
+        self.render_upload_latex('$' + msg.text[3:] + '$', str(msg.channel.id))
 
     def help_response(self, msg):
         response = r"""
