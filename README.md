@@ -12,7 +12,6 @@ In `local-settings.py`, set the variable `SLACK_API_TOKEN` to the API token give
 
 The bot can be started by entering `slack-machine` into your shell.
 
-
 ## Alternative installation using Python virtual environments (highly recommended)
 After you clone this repository, go into the repository's root directory with `cd slack-latexbot` and set the virtual environment's python version to at least Python 3.6 (`slack-machine` requires Python 3 and won't play nice with Python 2) and install the dependencies using the following commands:
 
@@ -25,6 +24,9 @@ After you clone this repository, go into the repository's root directory with `c
 In `local-settings.py`, set the variable `SLACK_API_TOKEN` to the API token given to you by Slack in your bot's configuration.
 
 The bot can be started by entering `pipenv run slack-machine` into your shell while you are in the project's root directory.
+
+## Running the bot as a background process
+If you want the bot to keep running after you exit your shell or log out, you can use GNU Screen. If you have Screen installed, then `cd` into your local copy of this repository and run `screen`. Then dismiss the message that comes up by pressing space or enter. Now, start the bot with `slack-machine` or `pipenv run slack-machine` depending on if you used pipenv to install the dependencies or not, and then press `Ctrl`+`a`, and then press `d`.
 
 ## Using the bot in Slack
 Whenever a user begins their message with `=tex`, the rest of the message is interpreted as if it were put between the standard `\begin{document}` and `\end{document}` tags. For example, entering the message
