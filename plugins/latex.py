@@ -18,7 +18,7 @@ class LatexPlugin(MachineBasePlugin):
                 #Compile tex file into pdf.
                 check_call(['pdflatex', '-halt-on-error', '-no-shell-escape', '-interaction', 'nonstopmode', 'outfile.tex'], cwd=dir, stdout=None, stderr=None)
                 #Convert pdf file into png file.
-                check_call(['convert', '-density', '200', 'outfile.pdf', '-quality', '90', '-strip', 'outfile.png'], cwd=dir, stdout=None, stderr=None)
+                check_call(['convert', '-density', '200', 'outfile.pdf', '-quality', '90', '-strip', '-background', 'white', '-flatten', 'outfile.png'], cwd=dir, stdout=None, stderr=None)
                 #Upload png file via Slack API.
                 sc = SlackClient(self.settings['SLACK_API_TOKEN'])
                 with open(join(dir, 'outfile.png'), mode='rb') as file_content:
