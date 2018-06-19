@@ -1,5 +1,5 @@
 # slack-latexbot
-A project that uses the `slack-machine` package and the Slack Developer Kit for Python to provide a customizable LaTeX-rendering Slack bot.
+A project that uses the [slack-machine](https://slack-machine.readthedocs.io/) package and the [Slack Developer Kit for Python](https://slackapi.github.io/python-slackclient/) to provide a customizable LaTeX-rendering Slack bot.
 
 ## Quickstart
 Install this project's dependencies with
@@ -40,3 +40,8 @@ in any channel which the bot is a member of will cause the bot to respond with t
 The `=t` command is a shorthand command that interprets the message text as if it were all one equation. No delimiters are required when using `=t`. An example usage would be `=t 1\neq 2`. This command takes the user's message and wraps it between two $ signs and then interprets the resulting string in the same way the `=tex` command would.
 
 A help message can be sent by the bot by using `=help` or by mentioning it (using @) and including the word "help" in any part of the message (any lowercase/uppercase variation will do).
+
+## To-do
+- Allow users to DM bot to test out commands
+- Allow users to import custom packages (e.g., by entering `=tex{packagename} <message>`)
+- Allow use of Tikz
