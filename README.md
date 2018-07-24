@@ -37,13 +37,13 @@ Whenever a user begins their message with `=tex`, the rest of the message is int
 ```
 =tex $\int_{-\infty}^{\infty} e^{-x^2} \mathrm dx = \sqrt{\pi}$
 ```
-in any channel which the bot is a member of will cause the bot to respond with the image below.
+in any channel which the bot is a member of (including DMs) will cause the bot to respond with the image below.
 
 ![Rendered LaTeX image](docs/outfile.png?raw=true "PNG image rendered by bot")
 
 The `=t` command is a shorthand command that interprets the message text as if it were all one equation. No delimiters are required when using `=t`. An example usage would be `=t 1\neq 2`. This command takes the user's message and wraps it between two $ signs and then interprets the resulting string in the same way the `=tex` command would.
 
-A help message can be sent by the bot by using `=help` or by mentioning it (using @) and including the word "help" in any part of the message (any lowercase/uppercase variation will do).
+The `=help` command will cause the bot to send a help message with information about all of the available commands.
 
 ## To-do
 - Allow users to import custom packages (e.g., by entering `=tex{packagename} <message>`)
