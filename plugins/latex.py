@@ -1,5 +1,4 @@
 from machine.plugins.base import MachineBasePlugin
-from machine.plugins.decorators import listen_to, respond_to
 from tempfile import TemporaryDirectory
 from slackclient import SlackClient
 from subprocess import check_call
