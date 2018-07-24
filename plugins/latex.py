@@ -21,7 +21,7 @@ class LatexPlugin(MachineBasePlugin):
             if re.match(r'=t[\s]', data['text'], re.IGNORECASE):
                 self.render_upload_latex('$' + data['text'][3:] + '$', data['channel'])
             # =help command
-            if re.match(r'=help[\s]', data['text'], re.IGNORECASE):
+            if re.match(r'=help', data['text'], re.IGNORECASE):
                 self.sc.api_call("chat.postMessage",channel=data['channel'],text=self.settings['HELP_RESPONSE'])
 
     def render_upload_latex(self, msgtext, msgchannel):
