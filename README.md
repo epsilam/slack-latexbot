@@ -30,7 +30,12 @@ In `local-settings.py`, set the variable `SLACK_API_TOKEN` to the API token give
 The bot can be started by entering `pipenv run slack-machine` into your shell while you are in the project's root directory.
 
 ## Running the bot as a background process
-If you want the bot to keep running after you exit your shell or log out, you can use GNU Screen. If you have Screen installed, then `cd` into your local copy of this repository and run `screen`. Then dismiss the message that comes up by pressing space or enter. Now, start the bot with `slack-machine` or `pipenv run slack-machine` depending on if you used pipenv to install the dependencies or not, and then press `Ctrl`+`a`, and then press `d`.
+
+These instructions apply to GNU/Linux-based operating systems.
+
+If you want the bot to keep running after you exit your shell or log out, you can use GNU Screen. If you have Screen installed, then `cd` into your local copy of this repository and run `screen`. Then dismiss the message that comes up by pressing space or enter. Now, start the bot with `slack-machine` or `pipenv run slack-machine` depending on if you used pipenv to install the dependencies or not, and then press `Ctrl`+`a`, and `d` to detach the screen instance. If you wish to kill all instances of the bot, you may do so with `killall slack-machine`.
+
+If you wish to start a detached Screen instance with the bot automatically, simply enter `screen -dm slack-machine` or `screen -dm pipenv run slack-machine`. To re-attach to the Screen instance (e.g., if you want to view some output produced by the bot), enter `screen -r`.
 
 ## Using the bot in Slack
 Whenever a user begins their message with `=tex`, the rest of the message is interpreted as if it were put between the standard `\begin{document}` and `\end{document}` tags. For example, entering the message
