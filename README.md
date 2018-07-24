@@ -46,7 +46,6 @@ The `=t` command is a shorthand command that interprets the message text as if i
 A help message can be sent by the bot by using `=help` or by mentioning it (using @) and including the word "help" in any part of the message (any lowercase/uppercase variation will do).
 
 ## To-do
-- Allow users to DM bot to test out commands
 - Allow users to import custom packages (e.g., by entering `=tex{packagename} <message>`)
 - Remove dependency on slack-machine and rewrite using only SlackClient
 - Send 'typing...' indicator when a request to convert LaTeX is received, so that users can know that their message was received and is being processed.
